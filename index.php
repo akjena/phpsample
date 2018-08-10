@@ -15,10 +15,10 @@
 			  $dbname = getenv("dbname");
 	
 	 		echo "dbhost: " . $dbhost;
-			echo "dbport: " . $dbport;
-			echo "dbuser: " . $dbuser;
-			echo "dbpass: " . $dbpass;
-			echo "dbname: " . $dbname;
+			echo "\ndbport: " . $dbport;
+			echo "\ndbuser: " . $dbuser;
+			echo "\ndbpass: " . $dbpass;
+			echo "\ndbname: " . $dbname;
 		 
             $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
          
