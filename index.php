@@ -34,11 +34,11 @@
                "(tutorial_title,tutorial_author, submission_date) "."VALUES ".
                "('$tutorial_title','$tutorial_author','$submission_date')";
                //mysql_select_db('TUTORIALS');
-            $retval = mysql_query( $sql, $conn );
+           // $retval = mysql_query( $sql, $conn );
          
-            if(! $retval ) {
-               die('Could not enter data: ' . mysql_error());
-            }
+           // if(! $retval ) {
+           //    die('Could not enter data: ' . mysql_error());
+           // }
          
             echo "Entered data successfully\n";
             mysql_close($conn);
