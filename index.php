@@ -33,6 +33,13 @@
             $sql = "INSERT INTO tutorials_tbl ".
                "(tutorial_title,tutorial_author, submission_date) "."VALUES ".
                "('$tutorial_title','$tutorial_author','$submission_date')";
+		 
+		if ($conn->query($sql) === TRUE) {
+		    echo "New record created successfully";
+		} else {
+		    echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		 
                //mysql_select_db('TUTORIALS');
            // $retval = mysql_query( $sql, $conn );
          
