@@ -13,7 +13,13 @@
 			  $dbuser = getenv("dbuser");
 			  $dbpass = getenv("dbpass");
 			  $dbname = getenv("dbname");
-			
+	
+	 		echo "dbhost: " . $dbhost;
+			echo "dbport: " . $dbport;
+			echo "dbuser: " . $dbuser;
+			echo "dbpass: " . $dbpass;
+			echo "dbname: " . $dbname;
+		 
             $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
          
             if(! $conn ) {
