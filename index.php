@@ -41,7 +41,8 @@
            // }
          
             echo "Entered data successfully\n";
-            mysql_close($conn);
+           // mysql_close($conn);
+	     $conn->close();
          } else {
       ?>
    
