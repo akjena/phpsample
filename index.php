@@ -7,10 +7,14 @@
    <body>
       <?php
          if(isset($_POST['add'])) {
-            $dbhost = 'mysql';
-            $dbuser = 'admin';
-            $dbpass = 'admin';
-            $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+            
+			  $dbhost = getenv("MYSQL_SERVICE_HOST");
+			  $dbport = getenv("MYSQL_SERVICE_PORT");
+			  $dbuser = getenv("dbuser");
+			  $dbpass = getenv("dbpass");
+			  $dbname = getenv("dbname");
+			
+            $conn = new mysqli($servername, $username, $password, $dbname);
          
             if(! $conn ) {
                die('Could not connect: ' . mysql_error());
