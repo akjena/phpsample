@@ -25,13 +25,13 @@
             if(! $conn ) {
                die('Could not connect: ' . mysql_error());
             }
-		$checktable="SELECT * FROM tutorials_tbl";
+		$checktable = "SELECT * FROM tutorials_tbl";
 		 
 		if ($conn->query($checktable) === FALSE) {
 
 			 echo "Table not found, please create one.<br/>"
-				 
-			 $tablescript="create table tutorials_tbl(
+		/*		 
+			 $tablescript = "create table tutorials_tbl(
 				tutorial_id INT NOT NULL AUTO_INCREMENT,
 				tutorial_title VARCHAR(100) NOT NULL,
 				tutorial_author VARCHAR(40) NOT NULL,
@@ -42,7 +42,7 @@
 				echo "Table created. <br/>" 
 			 } else {
 			 	echo "Table creation error. <br/>" 
-			 }
+			 }*/
 		} else {
 			echo "Table Exists. <br/>" 
 		}
