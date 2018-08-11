@@ -29,8 +29,8 @@
 		 
 		if ($conn->query($checktable) === FALSE) {
 
-			 echo "Table not found, please create one.<br/>"
-		/*		 
+			 echo "Table not found, please create one.<br/>";
+				 
 			 $tablescript = "create table tutorials_tbl(
 				tutorial_id INT NOT NULL AUTO_INCREMENT,
 				tutorial_title VARCHAR(100) NOT NULL,
@@ -39,12 +39,12 @@
 				PRIMARY KEY ( tutorial_id )
 				)";
 			 if ($conn->query($tablescript) === TRUE) {
-				echo "Table created. <br/>" 
+				echo "Table created. <br/>";
 			 } else {
-			 	echo "Table creation error. <br/>" 
-			 }*/
+			 	echo "Table creation error. <br/>";
+			 }
 		} else {
-			echo "Table Exists. <br/>" 
+			echo "Table Exists. <br/>";
 		}
 		 
             if(! get_magic_quotes_gpc() ) {
