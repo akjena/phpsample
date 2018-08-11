@@ -14,18 +14,39 @@
 			  $dbpass = getenv("dbpass");
 			  $dbname = getenv("dbname");
 	
-	 		echo "dbhost: " . $dbhost;
-			echo "\ndbport: " . $dbport;
-			echo "\ndbuser: " . $dbuser;
-			echo "\ndbpass: " . $dbpass;
-			echo "\ndbname: " . $dbname;
+	 		echo "<br/>dbhost: " . $dbhost;
+			echo "<br/>dbport: " . $dbport;
+			echo "<br/>dbuser: " . $dbuser;
+			echo "<br/>dbpass: " . $dbpass;
+			echo "<br/>dbname: " . $dbname;
 		 
             $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
          
             if(! $conn ) {
                die('Could not connect: ' . mysql_error());
             }
+		$checktable="SELECT * FROM tutorials_tbl";
+		 
+		if ($conn->query($checktable) === FALSE) {
 
+			 echo "Table not found, please create one.<br/>"
+				 
+			 $tablescript="create table tutorials_tbl(
+				tutorial_id INT NOT NULL AUTO_INCREMENT,
+				tutorial_title VARCHAR(100) NOT NULL,
+				tutorial_author VARCHAR(40) NOT NULL,
+				submission_date DATE,
+				PRIMARY KEY ( tutorial_id )
+				)";
+			 if ($conn->query($tablescript) === TRUE) {
+				echo "Table created. <br/>" 
+			 } else {
+			 	echo "Table creation error. <br/>" 
+			 }
+		} else {
+			echo "Table Exists. <br/>" 
+		}
+		 
             if(! get_magic_quotes_gpc() ) {
                $tutorial_title = addslashes ($_POST['tutorial_title']);
                $tutorial_author = addslashes ($_POST['tutorial_author']);
@@ -41,7 +62,7 @@
                "('$tutorial_title','$tutorial_author','$submission_date')";
 		 
 		if ($conn->query($sql) === TRUE) {
-		    echo "New record created successfully";
+		    echo "<br/>New record created successfully";
 		} else {
 		    echo "Error: " . $sql . "<br>" . $conn->error;
 		}
@@ -53,7 +74,7 @@
            //    die('Could not enter data: ' . mysql_error());
            // }
          
-            echo "Entered data successfully\n";
+            echo "Entered data successfully<br/>";
            // mysql_close($conn);
 	     $conn->close();
          } else {
