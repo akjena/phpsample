@@ -44,7 +44,7 @@
 			 	echo "Table creation error. <br/>";
 			 }
 		} else {
-			echo "Table Exists. <br/>";
+			 echo "Table Exists. <br/>";
 		}
 		 
             if(! get_magic_quotes_gpc() ) {
