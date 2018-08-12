@@ -25,13 +25,13 @@
             if(! $conn ) {
                die('Could not connect: ' . mysql_error());
             }
-		$checktable = "SELECT * FROM tutorials_tbl3";
+		$checktable = "SELECT * FROM tutorials_tbl2";
 		 
 		if ($conn->query($checktable) === FALSE) {
 
 			 echo "<br/>Table not found, please create one.<br/>";
 				 
-			 $tablescript = "create table tutorials_tbl (
+			 $tablescript = "create table tutorials_tbl2 (
 				tutorial_id INT NOT NULL AUTO_INCREMENT,
 				tutorial_title VARCHAR(100) NOT NULL,
 				tutorial_author VARCHAR(40) NOT NULL,
@@ -57,7 +57,7 @@
 
             $submission_date = $_POST['submission_date'];
    
-            $sql = "INSERT INTO tutorials_tbl ".
+            $sql = "INSERT INTO tutorials_tbl2 ".
                "(tutorial_title,tutorial_author, submission_date) "."VALUES ".
                "('$tutorial_title','$tutorial_author','$submission_date')";
 		 
