@@ -31,7 +31,7 @@
 
 			 echo "<br/>Table not found, please create one.<br/>";
 				 
-			 $tablescript = "create table tutorials_tbl3(
+			 $tablescript = "create table tutorials_tbl (
 				tutorial_id INT NOT NULL AUTO_INCREMENT,
 				tutorial_title VARCHAR(100) NOT NULL,
 				tutorial_author VARCHAR(40) NOT NULL,
@@ -57,7 +57,7 @@
 
             $submission_date = $_POST['submission_date'];
    
-            $sql = "INSERT INTO tutorials_tbl3 ".
+            $sql = "INSERT INTO tutorials_tbl ".
                "(tutorial_title,tutorial_author, submission_date) "."VALUES ".
                "('$tutorial_title','$tutorial_author','$submission_date')";
 		 
